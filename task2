@@ -1,0 +1,30 @@
+// Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+// [3, 7, 23, 12] -> 19
+
+// [-4, -6, 89, 6] -> 0
+int[] array()
+{
+  int[] myarray = new int[5];
+  for (int i = 0; i < myarray.Length; i++)
+  {
+    myarray[i] = Random.Shared.Next(1, 20);
+  }
+  return myarray;
+}
+int Sumelements(int[] myarray)
+{
+  int Sum = 0;
+  for (int i = 1; i < myarray.Length; i += 2)
+  {
+   
+    
+      Sum += myarray[i];
+    
+  }
+  return Sum;
+}
+int[] randomarray = array();
+int sumnegative = Sumelements(randomarray);
+Console.WriteLine($"получившийся массив = [{string.Join(", ", randomarray)}]");
+Console.WriteLine($"сумма нечетных элементов = {sumnegative}");
